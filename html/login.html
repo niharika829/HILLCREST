@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		
+		
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ 
+
+     
+<title>login-THE HILLCREST</title>
+<link rel="icon" href="../2.jpg">
+<style>
+<!--navigatio bar-->
+.nav-link{
+	 font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: 8px;
+  margin-right:5px;
+}
+.navbar-brand{
+	
+	 font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body{
+
+   background: url('../image/back.jpg');
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-position: center center;
+   background-size: cover;
+   margin: 0 !important;
+   background-size: 100% cover!important;
+ 
+}
+form {
+width:40%;
+margin-top:5%;background-color:white;}
+
+input[type=text], input[type=password] , input[type=email] {
+  width: 80%;
+  padding: 12px 20px;
+
+  display: inline-block;
+
+  
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+
+.container {
+width:100%;
+  padding: 16px;
+}
+
+span.psw {
+
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  button {
+     width: 100%;
+  }
+}
+#forget{
+
+display:none}
+#formsignup{
+
+display:none}
+
+</style>
+</head>
+<body>
+<div id="nav"> <nav  class="navbar navbar-expand-md bg-dark navbar-dark">
+ <a class="navbar-brand" href="../vid.html"><img src="../2.jpg" style="height:80px"></a>
+  
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+	   <li class="nav-item" >
+        <button type="button" class="btn btn-outline-warning" > <a class="nav-link" href="../vid.html">THE HILLCREST</a></button>
+      </li>  
+	  <li class="nav-item">
+      <button type="button" class="btn btn-outline-info"><a class="nav-link" href="../html/linens.html">linens</a></button>
+	  </li>	  
+ <li class="nav-item" >
+        <button type="button" class="btn btn-outline-success" > <a class="nav-link" href="../html/dining.html">dining</a></button>
+      </li>  
+	  <li class="nav-item">
+      <button type="button" class="btn btn-outline-danger"><a class="nav-link" href="../html/gallery.html">bar gallery</a></button>
+	  </li>	  	  
+ 
+    </ul>
+  </div>  
+</nav></div>
+
+<!--for sign in-->
+<section>
+<center>
+
+
+
+<form method="post" action="acc.html"id="form" style="padding:3%"><!--post method do show value on search bar(more secure tha get) and action means that after successfully login the page will go to acc.html--->
+<h2>Sign in</h2>
+  
+
+  
+    <label for="uname"><b>Username</b></label><!--for in label and id in input should be same so that when user clicks on username text than input field should get focused-->
+    <input type="text" placeholder="Enter Username" name="uname" id="loginid"required><br></br><!--required means mandatory to be filled-->
+
+    <label for="psw"><b>Password</b></label>
+	<input type="password" placeholder="Enter Password" name="psw" id="loginpswd"required><br><br><br>
+        
+    <button type="submit" class="btn btn-success" style="width:40%;padding:2%;" onclick="check()" id="btn">Success</button><br>
+	
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  
+
+  <div class="container" style="background-color:#f1f1f1">
+      
+  <button type="button" class="btn btn-info" onclick="member()">new member</button><!--if new user clicks this then member function will be called-->
+    <button type="button" onclick="forgot()"class="btn btn-default">forgot password?</button><!--forgot function will be  called-->
+  </div>
+</form>
+
+</center>
+</section>
+<!--for forget password-->
+<section id="forget">
+<center>
+
+
+
+
+
+
+
+<form method="post" id="form">
+<h2>reset password</h2>
+
+  <label for="email"><b>Email Address</b></label>
+    <input type="email" placeholder="Enter email" name="email" required><br></br>
+  
+       
+    <button type="submit" class="btn btn-success" style="width:40%;padding:2%;" onclick="reset()">Success</button><br><!--nothing will hapen when user click the button because reset function is not written in script-->
+  
+  
+
+  <div class="container" style="background-color:#f1f1f1">
+    
+    <button type="button" onclick="backtologin()"class="btn btn-default">back</button>
+  </div>
+</form>
+	</center>
+</section>
+
+
+
+
+
+
+
+
+
+<!--for sign up-->
+<section>
+<center>
+<form method="post" id="formsignup" style="padding:3%">
+<h2>Sign up</h2>
+ 
+  
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" id="nameup"name="uname" required><br></br>
+	
+	  <label for="email"><b>your Email</b></label>
+    <input type="email" placeholder="Enter email" id="emailup"name="email" required><br></br>
+  
+       
+
+    <label for="psw"><b>Password</b></label>
+	<input type="password" placeholder="Enter Password" id="psw"name="psw" required><br><br>
+	 <label for="psw"><b> verification</b></label>
+	<input type="password" placeholder="Enter Password"id="password" name="password" required><br><br><br>
+        
+    <button type="submit" class="btn btn-success" style="width:40%;padding:2%;" onclick="verification()">Sign up</button><br>
+  
+  
+
+  <div class="container" style="background-color:#f1f1f1">
+      
+  
+    <button type="button" onclick="backtologin()"class="btn btn-default">back</button>
+  </div>
+</form>
+
+</center>
+</section>
+
+
+
+
+
+
+
+
+
+
+  
+
+<script>
+<!----yeh function tb chlega jb koi user new account bnayega--->
+function verification(){
+var pass1=document.getElementById("psw").value;<!--stores value of password->
+var pass2=document.getElementById("password").value;<!--stores value of  repeat password->
+var nameup=document.getElementById("nameup").value;<!--stores value of name->
+var emailup=document.getElementById("emailup").value;<!--stores value of email->
+<!--sbse pehele if statement chlegi jismein hum check krenge ki user ne sari fiels fill ki hai ya nhi hum sbki length calculate krenge agr kisi bhi length zero ayi mtlb user ne us field mein kuch nhi likha hai is case mein ek alert ayega to fill all the details lekin agr user ne sari fields bhari hai toh else if condition chlegi jismein hum check krenge ki user ne dono password same dale hai ya nhi ismein meine === use kia hai jo na sirf yeh check krega ki password same hai blki vo yeh bhi check krega ki data type same hai nahi and agr password match krte hai toh alert ayega account created scyussfully and 2 sec ke baad backtologin function call hoga jo user ko login vali div pr lejayenga lekin agr password match nhi krte toh else condition chlegi and alert ayega that password is not matching-->
+if((emailup.length===0)||(nameup.length===0)||(pass2.length===0)||(pass1.length===0)){
+alert("please fill all the details")
+}
+else if(pass1 === pass2){
+alert("account successfuly created.");
+var interval=setInterval(backtologin, 2000);
+
+}
+else{alert("both the passwords doesn't match!! please check again");}
+}
+
+
+
+
+
+
+
+function myFunction(){
+document.getElementById("btn").disabled=false;
+}
+<!----yeh function tb chlega jb user apna username and password dalega ---->
+function check(){
+var name=document.getElementById("loginid").value;<!--username store kia->
+var psw=document.getElementById("loginpswd").value;<!--paswd store kia-->
+<!-- agr username saurav and password saurav123 hua .........ya username sourav and pswd sourav123 hua .......ya usernameneha and pswd neha123 hua tbhi if condition chlega and alert ayega login successfull  and fir yeh function form ko true value return krega kyunki humne form mein action=acc.html use kia hai toh jbtk use true value nhi milegi vo acc.html page pr nhi jayega lekin agr koi bhi username ya password glt hoga tb else condition chlegi jismein alert ayega invalid username and pswd ka alert ane ke baad vo btn ko disabled krdega mtlb uspr click nhi ho payega and 6 sec ke baad myFunction name ke function ko call krega jo ki us btn se disable vali property hta dega-->
+if(((name === "saurav")&& (psw === "saurav123")) || ((name === "sourav")&& (psw === "sourav123")) || ((name === "neha")&& (psw === "neha123"))){
+
+
+  alert("login successful!!!");
+  
+}
+else{alert("invalid username or password")
+document.getElementById("btn").disabled=true;
+setInterval(myFunction, 6000);
+}
+}
+
+
+
+
+<!---yeh function tb chlegajb koi new member vale button pr click krega yeh function login vali div ka dispaly none krdegi mtlb usse hide krdegi and signup ki div jiska display humne css mein none kia hua hai use block krdegi ........isse login vali div chup jayegi and sign up div uski jgha dikhne lgegi->
+function member(){
+document.getElementById("formsignup").style.display="block";
+document.getElementById("form").style.display="none";
+}
+<!---yeh function tb chlegajb koi forget pwswd vale button pr click krega yeh function login vali div ka dispaly none krdegi mtlb usse hide krdegi and signup vali div ka dispaly none krdegi mtlb usse hide krdegi  and forget pswd vali div jiska display humne css mein none kia hua hai use block krdegi ........isse login vali div chup jayegi and sign up div bhi chup jayegi and forget pswd vali div uski jgha dikhne lgegi->
+function forgot(){
+document.getElementById("forget").style.display="block";
+document.getElementById("form").style.display="none";
+document.getElementById("formsignup").style.display="none";
+
+
+}
+
+
+
+<!--yeh function tb chlega jb user ko ya toh sign up vali div se login pr back jana hoga ya phir forget pswd se login pr back jana hoga back button click krke dono cases mein login div ka display block hoga mtlb vo dikhne lgegi and sign up and forget pswd ki div ka display none hojayega mtlb vo gayad ho jayegi-->
+
+function backtologin(){
+document.getElementById("formsignup").style.display="none";
+
+document.getElementById("forget").style.display="none";
+document.getElementById("form").style.display="block";
+<!--line number 285  mein meine set intervall mein 2 sec ke baad backtologin function call kia tha usi ko rokne kelye mein clearIntervallgaya hai usi variable pr jismein mein 285 line mein setinterval ko store kia hai.............variable name= interval-->
+clearInterval(interval);
+}
+
+</script>
+</body>
+</html>
